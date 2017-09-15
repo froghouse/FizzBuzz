@@ -37,17 +37,19 @@
       $fizzDivisor = divisible($i, $argv[0]);
       $buzzDivisor = divisible($i, $argv[1]);
 
-      if($fizzDivisor)
+      if($fizzDivisor and $buzzDivisor)
+      {
+        echo "FizzBuzz";
+      }
+      elseif($fizzDivisor)
       {
         echo "Fizz";
       }
-
-      if($buzzDivisor)
+      elseif($buzzDivisor)
       {
         echo "Buzz";
       }
-
-      if($fizzDivisor === false and $buzzDivisor === false)
+      else
       {
         echo $i;
       }
