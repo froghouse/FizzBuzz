@@ -1,6 +1,6 @@
 #!/usr/bin/php
 <?php
-  function areArgumentsCorrect()
+  function argumentsCorrect()
   {
     global $argv;
 
@@ -8,11 +8,7 @@
     {
       foreach($argv as $arg)
       {
-        if(is_numeric($arg))
-        {
-          continue;
-        }
-        else
+        if(is_numeric($arg) === false)
         {
           return false;
         }
@@ -58,9 +54,11 @@
     }
   }
 
+  // The first element of the array contains the script name.
+  // Let's get rid of that.
   array_shift($argv);
 
-  if(areArgumentsCorrect())
+  if(argumentsCorrect())
   {
     fizzBuzz();
   }
